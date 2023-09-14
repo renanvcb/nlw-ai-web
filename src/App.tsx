@@ -112,7 +112,10 @@ export function App() {
               <Separator />
 
               <div className="space-y-4">
-                <Label>Temperatura</Label>
+                <div className="flex justify-between">
+                  <Label>Temperatura</Label>
+                  <Label>{temperature}</Label>
+                </div>
                 <Slider
                   min={0}
                   max={1}
