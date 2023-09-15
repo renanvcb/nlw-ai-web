@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider"
 import { Github, Wand2 } from "lucide-react";
+import { ReloadIcon } from "@radix-ui/react-icons"
 import { Button } from "./components/ui/button";
 import { Separator } from "./components/ui/separator";
 import { Textarea } from "./components/ui/textarea";
@@ -131,8 +132,14 @@ export function App() {
               <Separator />
 
               <Button disabled={isLoading} type="submit" className="w-full">
-                Executar
-                <Wand2 className="w-4 h-4 ml-2" />
+                { isLoading ? (
+                  <ReloadIcon className="w-4 h-4 ml-2 animate-spin" />
+                ) : (
+                  <>
+                    Executar
+                    <Wand2 className="w-4 h-4 ml-2" />
+                  </>
+                )}
               </Button>
             </form>
           </aside>
